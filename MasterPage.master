@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        header{
+            margin:0;
+
+        }
+        body{
+            margin:0;
+            
+        }
+            .auto-style1 {
+            width: 1500px;
+            height: 350px;
+        }
+        #TextArea1 {
+            width: 522px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img alt="LOGO" class="auto-style1" src="pic1.jpg" /></div>
+    <form id="form1" runat="server">
+   
+             <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" StaticDisplayLevels="5" BackColor="#FFFBD6" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#990000" StaticSubMenuIndent="200px" Orientation="Horizontal" Width="1500px">
+                 <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
+                 <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                 <DynamicMenuStyle BackColor="#FFFBD6" />
+                 <DynamicSelectedStyle BackColor="#FFCC66" />
+                 <StaticHoverStyle BackColor="#990000" ForeColor="White" />
+                 <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                 <StaticSelectedStyle BackColor="#FFCC66" />
+             </asp:Menu>
+   
+        <div>
+        <div class="Menu">
+        <asp:LoginView ID="loginView" runat="server">
+            <LoggedInTemplate>
+                <asp:LoginName BackColor="#ff66ff" ID="loginName" runat="server" FormatString="Hello, {0}!" />
+                (<asp:LoginStatus BackColor="#ff66ff" ID="loginStatus" runat="server" />)
+            </LoggedInTemplate>
+            <AnonymousTemplate>
+                <asp:LoginStatus BackColor="#ff66ff" ID="loginStatus" runat="server" />
+            </AnonymousTemplate>
+        </asp:LoginView>
+        </div>
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+         </div>
+          <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+        
+        </asp:ContentPlaceHolder>
+   
+
+       
+     
+   
+    </form>
+</body>
+</html>
